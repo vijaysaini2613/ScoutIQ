@@ -63,7 +63,7 @@ A cross-platform React Native (Expo) app built as part of the ScoutIQ React Nati
 1. Clone the repository
 
 ```bash
-git clone <[text](https://github.com/vijaysaini2613/ScoutIQ)>
+git clone https://github.com/vijaysaini2613/ScoutIQ.git
 cd scoutiq
 ```
 
