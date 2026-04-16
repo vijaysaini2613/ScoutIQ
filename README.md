@@ -131,4 +131,6 @@ Tested on:
 
 ## 👤 Author
 
-Vijay Saini
+Vijay Saini  
+
+*Note: Sole contributor. Contributions may appear under different accounts due to a Visual Studio configuration issue.*
