@@ -1,70 +1,75 @@
 import { useShortlist } from '../context/ShortlistContext';
 import { athletes } from '../data/athletes';
 import { calculateScore } from '../utils/calculateScore';
-// import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import  ScreenWrapper  from '@/src/components/ScreenWrapper';
+import { Image } from 'react-native';
 
 export default function ProfileScreen({ id }: { id: string }) {
-//const { id } = useLocalSearchParams();
-const { shortlist, toggleShortlist } = useShortlist();
+  const { shortlist, toggleShortlist } = useShortlist();
 
-if (!id) {
-  return <Text style={{ padding: 20 }}>Invalid athlete</Text>;
-}
+  if (!id) {
+    return <Text style={{ padding: 20 }}>Invalid athlete</Text>;
+  }
 
-const athlete = athletes.find(
-  (a) => a.id.toString() === id
-);
+  const athlete = athletes.find(
+    (a) => a.id.toString() === id
+  );
 
-if (!athlete) {
-  return <Text style={{ padding: 20 }}>Athlete not found</Text>;
-}
+  if (!athlete) {
+    return <Text style={{ padding: 20 }}>Athlete not found</Text>;
+  }
 
-const isShortlisted = shortlist.includes(athlete.id);
-
+  const isShortlisted = shortlist.includes(athlete.id);
   const score = calculateScore(athlete.stats);
 
   return (
+    <ScreenWrapper>
     <View style={styles.container}>
-      {/* 👤 Basic Info */}
+      {/* 👤 Avatar */}
+      <Image source={athlete.image} style={styles.avatar}/>
+
+      {/* 🧑 Name & Info */}
       <Text style={styles.name}>{athlete.name}</Text>
-      <Text>
+      <Text style={styles.info}>
         {athlete.sport} • {athlete.position}
       </Text>
-      <Text>Age: {athlete.age}</Text>
+      <Text style={styles.info}>Age: {athlete.age}</Text>
 
-      {/* 📊 Stats */}
-      <View style={styles.stats}>
+      {/* 📦 Stats Box */}
+      <View style={styles.statsBox}>
         <Text>Speed: {athlete.stats.speed}</Text>
         <Text>Stamina: {athlete.stats.stamina}</Text>
         <Text>Accuracy: {athlete.stats.accuracy}</Text>
       </View>
 
-      {/* 📈 Progress Bar */}
+      {/* 📈 Progress */}
       <View style={styles.progressBar}>
         <View
           style={[styles.progressFill, { width: `${score}%` }]}
         />
       </View>
-      <Text style={{ marginTop: 5 }}>
+
+      <Text style={styles.score}>
         Readiness Score: {score}
       </Text>
 
-      {/* ⭐ Shortlist Button */}
+      {/* ⭐ Button */}
       <TouchableOpacity
-  onPress={() => toggleShortlist(athlete.id)}
-  style={{
-    marginTop: 20,
-    padding: 12,
-    backgroundColor: isShortlisted ? 'red' : 'black',
-    borderRadius: 10,
-  }}
->
-  <Text style={{ color: 'white', textAlign: 'center' }}>
-    {isShortlisted ? 'Remove from Shortlist' : 'Add to Shortlist'}
-  </Text>
-</TouchableOpacity>
+        onPress={() => toggleShortlist(athlete.id)}
+        style={[
+          styles.button,
+          { backgroundColor: isShortlisted ? 'red' : 'black' },
+        ]}
+      >
+        <Text style={styles.buttonText}>
+          {isShortlisted
+            ? 'Remove from Shortlist'
+            : 'Add to Shortlist'}
+        </Text>
+      </TouchableOpacity>
     </View>
+    </ScreenWrapper>
   );
 }
 
@@ -72,17 +77,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
   },
+  avatar: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    alignSelf: 'center',
+    marginBottom: 16,
+},
   name: {
     fontSize: 22,
     fontWeight: 'bold',
-    marginBottom: 5,
   },
-  stats: {
+  info: {
+    fontSize: 14,
+    color: '#555',
+  },
+  statsBox: {
     marginTop: 20,
+    width: '100%',
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 10,
+    backgroundColor: '#fff',
   },
   progressBar: {
     height: 10,
+    width: '100%',
     backgroundColor: '#ddd',
     borderRadius: 10,
     marginTop: 20,
@@ -91,6 +115,19 @@ const styles = StyleSheet.create({
   progressFill: {
     height: 10,
     backgroundColor: 'green',
+  },
+  score: {
+    marginTop: 8,
+  },
+  button: {
+    marginTop: 20,
+    padding: 14,
+    width: '100%',
     borderRadius: 10,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: '600',
   },
 });

@@ -8,10 +8,12 @@ export const athletes: Athlete[] = [
     position: 'Batsman',
     age: 34,
     stats: { speed: 75, stamina: 90, accuracy: 92 },
+    image: require('../../assets/images/virat.jpg'),
   },
   {
     id: '2',
     name: 'MS Dhoni',
+    image: require('../../assets/images/dhoni.jpg'),
     sport: 'Cricket',
     position: 'Wicketkeeper',
     age: 41,
@@ -20,6 +22,7 @@ export const athletes: Athlete[] = [
   {
     id: '3',
     name: 'Cristiano Ronaldo',
+    image: require('../../assets/images/Ronaldo.jpg'),
     sport: 'Football',
     position: 'Forward',
     age: 39,
@@ -28,6 +31,7 @@ export const athletes: Athlete[] = [
   {
     id: '4',
     name: 'Lionel Messi',
+    image: require('../../assets/images/Messi.jpg'),
     sport: 'Football',
     position: 'Forward',
     age: 37,
@@ -36,6 +40,7 @@ export const athletes: Athlete[] = [
   {
     id: '5',
     name: 'LeBron James',
+    image: require('../../assets/images/lebron.jpg'),
     sport: 'Basketball',
     position: 'Forward',
     age: 39,
@@ -44,6 +49,7 @@ export const athletes: Athlete[] = [
   {
     id: '6',
     name: 'Stephen Curry',
+    image: require('../../assets/images/curry.jpg'),
     sport: 'Basketball',
     position: 'Guard',
     age: 36,
@@ -52,6 +58,7 @@ export const athletes: Athlete[] = [
   {
     id: '7',
     name: 'Hardik Pandya',
+    image: require('../../assets/images/hardik.jpg'),
     sport: 'Cricket',
     position: 'All-rounder',
     age: 30,
@@ -60,6 +67,7 @@ export const athletes: Athlete[] = [
   {
     id: '8',
     name: 'Neymar Jr',
+    image: require('../../assets/images/neymar.jpg'),
     sport: 'Football',
     position: 'Forward',
     age: 32,
@@ -68,6 +76,7 @@ export const athletes: Athlete[] = [
   {
     id: '9',
     name: 'Klay Thompson',
+    image: require('../../assets/images/klay.jpg'),
     sport: 'Basketball',
     position: 'Guard',
     age: 34,
@@ -76,6 +85,7 @@ export const athletes: Athlete[] = [
   {
     id: '10',
     name: 'Rohit Sharma',
+    image: require('../../assets/images/rohit.jpg'),
     sport: 'Cricket',
     position: 'Batsman',
     age: 36,
@@ -84,6 +94,7 @@ export const athletes: Athlete[] = [
   {
     id: '11',
     name: 'Kylian Mbappe',
+    image: require('../../assets/images/mbappe.jpg'),
     sport: 'Football',
     position: 'Forward',
     age: 25,
@@ -92,6 +103,7 @@ export const athletes: Athlete[] = [
   {
     id: '12',
     name: 'Kevin Durant',
+    image: require('../../assets/images/durant.jpg'),
     sport: 'Basketball',
     position: 'Forward',
     age: 35,
@@ -100,6 +112,7 @@ export const athletes: Athlete[] = [
   {
     id: '13',
     name: 'Jasprit Bumrah',
+    image: require('../../assets/images/bumrah.jpg'),
     sport: 'Cricket',
     position: 'Bowler',
     age: 30,
@@ -108,6 +121,7 @@ export const athletes: Athlete[] = [
   {
     id: '14',
     name: 'Erling Haaland',
+    image: require('../../assets/images/haaland.jpg'),
     sport: 'Football',
     position: 'Striker',
     age: 24,
@@ -116,6 +130,7 @@ export const athletes: Athlete[] = [
   {
     id: '15',
     name: 'Giannis Antetokounmpo',
+    image: require('../../assets/images/giannis.jpg'),
     sport: 'Basketball',
     position: 'Forward',
     age: 29,

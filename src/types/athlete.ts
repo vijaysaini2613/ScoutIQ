@@ -1,4 +1,5 @@
 export interface Athlete {
+  image: any;
   id: string;
   name: string;
   sport: 'Cricket' | 'Football' | 'Basketball';

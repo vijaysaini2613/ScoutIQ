@@ -34,9 +34,13 @@ export default function DiscoverScreen() {
   );
 
   return (
-    <View style={{ flex: 1, padding: 16, backgroundColor: '#f5f5f5' }}>
-      <Text style={{ fontSize: 22, fontWeight: 'bold', marginBottom: 10 }}>
-        Discover
+    <View style={{ flex: 1, backgroundColor: '#f8f8f8', padding: 16 }}>
+      <Text style={{
+         fontSize: 22,
+         fontWeight: '700',
+         marginBottom: 10
+      }}>
+       Discover Athletes
       </Text>
 
       {/* 🔍 Search */}
@@ -55,8 +59,8 @@ export default function DiscoverScreen() {
       />
 
       {/* 🔢 Result Count */}
-      <Text style={{ marginBottom: 10 }}>
-        {filteredAthletes.length} athletes found
+      <Text style={{ color: '#666', marginBottom: 10 }}>
+        {filteredAthletes.length} results
       </Text>
 
       {/* 🎯 Filters */}
