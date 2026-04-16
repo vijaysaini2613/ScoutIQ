@@ -1,50 +1,134 @@
-# Welcome to your Expo app 👋
+# ScoutIQ — Athlete Discovery App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform React Native (Expo) app built as part of the ScoutIQ React Native Intern assignment. The app allows scouts to browse athletes, view detailed profiles, and maintain a persistent shortlist.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
-   ```bash
-   npm install
-   ```
+### 1. Athlete Discovery Feed
 
-2. Start the app
+* Scrollable list using FlatList
+* Athlete cards with name, sport, position, age, and computed score
+* Filter by sport (Cricket, Football, Basketball)
+* Real-time search with 300ms debounce
+* Result count display
+* Empty state handling
 
-   ```bash
-   npx expo start
-   ```
+### 2. Athlete Profile Screen
 
-In the output, you'll find options to open the app in a
+* Detailed stats (speed, stamina, accuracy)
+* Custom-built readiness score progress bar
+* Add/Remove from shortlist (live state)
+* Clean navigation with parameter handling
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 3. Shortlist Screen
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* Persistent shortlist using AsyncStorage
+* Remove athletes from shortlist
+* Displays total count and average score
+* Empty state UI
 
-## Get a fresh project
+### 4. Navigation
 
-When you're ready, run:
+* Bottom Tab Navigation (Discover, Shortlist)
+* Stack navigation for Profile screen using Expo Router
+
+---
+
+## 🛠️ Tech Stack
+
+* React Native (Expo)
+* TypeScript
+* Expo Router (file-based navigation)
+* AsyncStorage (data persistence)
+* StyleSheet (no UI libraries used as per constraints)
+
+---
+
+## 📦 Project Structure
+
+/app → Navigation (Expo Router)
+/src → Business logic & UI
+/components → Reusable UI components
+/screens → Screen-level components
+/context → Global state (Shortlist)
+/data → Mock athlete data
+/utils → Helper functions
+
+---
+
+## ⚙️ How to Run
+
+1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone <[text](https://github.com/vijaysaini2613/ScoutIQ)>
+cd scoutiq
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Start the app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+4. Run on device
 
-Join our community of developers creating universal apps.
+* Scan QR using Expo Go (Android/iOS)
+* Or run on emulator
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🧠 Key Decisions
+
+* Used Expo Router for clean file-based navigation instead of manual navigation setup
+* Centralized shortlist state using Context API for global access
+* Implemented debounce manually for search to improve performance
+* Derived athlete score dynamically instead of storing it
+* Maintained clean separation between routing (/app) and logic (/src)
+
+---
+
+## ⚠️ What’s Incomplete / Trade-offs
+
+* UI is minimal and functional (focused more on clarity than design complexity)
+* Swipe-to-delete not implemented (used button instead for simplicity)
+* No backend integration (as per assignment constraint)
+
+---
+
+## 🔮 What I’d Improve with More Time
+
+* Add animations and transitions for better UX
+* Implement swipe gestures for shortlist removal
+* Improve visual design system (typography, spacing scale)
+* Add unit tests for core logic (filtering, scoring)
+* Introduce image optimization and caching
+
+---
+
+## 🤖 AI Usage
+
+Used AI tools (ChatGPT) for guidance in architecture decisions, debugging, and improving code structure.
+
+---
+
+## 📱 Platforms
+
+Tested on:
+
+* Android (Expo Go)
+* iOS (Expo Go)
+
+---
+
+## 👤 Author
+
+Vijay Saini
